@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/12311f7752.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />Sankar-Nallusamy/Training-Exercises
+    <style>
+      body {
+        font-family: "Poppins";
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <aside>
+        <div class="logo">
+          <img src="./img/bingova.png" alt="logo" />
+        </div>
+        <div class="nav-bar">
+          <button>
+            <a href="#">
+              <i class="fa-solid fa-grip-vertical"></i>
+              <span class="side-bar">Live Orders</span>
+            </a>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span  class="side-bar">Order History</span>
+            </a>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa-solid fa-tag"></i>
+              <span>Offers</span>
+            </a>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Products</span>
+            </a>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa-solid fa-house"></i>
+              <span>Stock</span>
+            </a>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa-solid fa-message"></i>
+              <span>Message</span>
+            </a>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa-solid fa-gear"></i>
+              <span>Settings</span>
+            </a>
+          </button>
+        </div>
+        <div class="busy-mode">
+          <span>Busy Mode</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </aside>
+      <div class="main-content">
+        <header>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="search" />
+          </div>
+          <div class="profile-container">
+            <div class="open-status">
+              <p>Open for Order</p>
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span class="slider round"></span>
+              </label>
+              <i class="fa-regular fa-bell" style="font-size: 1.4rem; position: relative;"><span style="position: absolute;width: 5px;height: 5px; top: 4px;left:12px;background: red;border-radius: 50%;"></span></i>
+            </div>
+            <div class="profile">
+              <img
+                class="img-container"
+                src="./img/profile.webp"
+                alt="profile-pic"
+              />
+                <span>Lubomir Dvofak</span>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+        </header>
+        <div class="main-section">
+          <div class="left-section">
+            <div class="order-no">
+              <p>Order Number</p>
+              <span>#256894</span>
+              <button>
+                <i class="fa-solid fa-message"></i>
+                <span>Message Customer</span>
+              </button>
+            </div>
+            <div class="product-table">
+              <table>
+                <thead>
+                  <th style="text-align: left;font-size: 1.2rem; font-weight: bolder;">Item Summary</th>
+                  <th style="font-size: 1.2rem; font-weight: bolder;">Qty</th>
+                  <th style="font-size: 1.2rem; font-weight: bolder;">Price</th>
+                  <th style="font-size: 1.2rem; font-weight: bolder;">Total Price</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="product-name">
+                      <div>
+                        <img src="./img/pepsi.jpg" alt="img1" /><span
+                          style="font-weight: 700"
+                          >Chocolate Milkshake</span
+                        >
+                      </div>
+                    </td>
+                    <td>x1</td>
+                    <td>$150</td>
+                    <td>$150</td>
+                  </tr>
+                  <tr>
+                    <td class="product-name">
+                      <div>
+                        <img src="./img/sprite.jfif" alt="img2" /><span
+                          style="font-weight: 700"
+                          >Chocolate Milkshake</span
+                        >
+                      </div>
+                    </td>
+                    <td>x2</td>
+                    <td>$7.5</td>
+                    <td>$15</td>
+                  </tr>
+                  <tr>
+                    <td class="product-name">
+                      <div>
+                        <img src="./img/yellow.png" alt="img3" /><span
+                          style="font-weight: 700"
+                          >Finish Washer large 3kg</span
+                        >
+                      </div>
+                    </td>
+                    <td>x3</td>
+                    <td>$70</td>
+                    <td>$210</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="order-table">
+              <table>
+                <thead>
+                  <th style="text-align: left;font-size: 1.2rem; font-weight: bolder;">Customer and Order details</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div
+                        style="display: flex; justify-content: space-between"
+                      >
+                        <span><strong>Customer-name</strong></span
+                        ><span style="font-weight: 700">Haurn libli</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        style="display: flex; justify-content: space-between"
+                      >
+                        <span><strong>Phone-number</strong></span
+                        ><span style="font-weight: 700">7918881829</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        style="display: flex; justify-content: space-between"
+                      >
+                        <span><strong>Bag-option</strong></span
+                        ><span style="font-weight: 700">No bag</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        style="display: flex; justify-content: space-between"
+                      >
+                        <span><strong> Type</strong></span
+                        ><span style="font-weight: 700">Delivery</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        style="display: flex; justify-content: space-between"
+                      >
+                        <span><strong>Note :</strong></span
+                        ><span style="font-weight: 700">N / A</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="right-section">
+            <div class="rider-details">
+              <p style="font-weight: bold; font-size: 1.2rem">Rider Details</p>
+              <div>
+                <img src="./img/rider.png" alt="" />
+                <span>Robert Suvent</span>
+                <button>Track Rider</button>
+              </div>
+            </div>
+            <div class="order-summary">
+              <div class="heading" style="display: flex">
+                <span style="font-size: 1.2rem; font-weight: bolder;">Order Summary</span>
+                <span
+                  style="
+                    font-size: 1rem;
+                    padding: 5px;
+                    background: rgb(245, 243, 243);
+                    color: rgb(243, 243, 8);
+                    font-weight: bolder;
+                  "
+                  >On the way</span
+                >
+              </div>
+              <div>
+                <span><strong>Order Created</strong></span>
+                <span>Sunday,May 7,2021</span>
+              </div>
+              <div>
+                <span><strong>Order Time</strong></span>
+                <span>06:24 A.M</span>
+              </div>
+              <div>
+                <span><strong>Subtotal</strong></span>
+                <span>$375</span>
+              </div>
+              <div>
+                <span><strong>Delivery Fee</strong></span>
+                <span>$0.00</span>
+              </div>
+            </div>
+            <div class="total-cost">
+              <span><strong>Total</strong></span>
+              <span>$375.00</span>
+            </div>
+            <div class="delivery-address">
+              <p style="font-size: 1.2rem; font-weight: bolder;">Delivery Address</p>
+              <p><strong>Address line : </strong>14 Anglesey Road</p>
+              <p><strong>Flat / Building name : </strong>James Court</p>
+              <p><strong>Street Name : </strong>Anglesey Road</p>
+              <p><strong>Postcode : </strong>En3 4hy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
