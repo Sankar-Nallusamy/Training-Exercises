@@ -1,0 +1,26 @@
+*{
+    padding: 0px;
+    margin: 5px;
+}
+header,footer{
+    background: green;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.grid-container{
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 1fr 2fr;
+    height: 80vh;
+    margin: 5px;
+}
+.grid-container > div{
+    background: gainsboro;
+    padding: 10px;
+}
+.grid-container > aside
+{
+    background: gainsboro;
+    padding: 10px;
+}

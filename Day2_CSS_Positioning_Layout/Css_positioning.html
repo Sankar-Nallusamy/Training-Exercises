@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Positioning</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        header,footer{
+            text-align: center;
+            background: gainsboro;
+            margin: 20px;
+            padding: 20px;
+        }
+        header{
+            padding: 20px;
+        }
+        #draggable{
+            background: green;
+            padding: 20px;
+            width: 20%;
+            color: white;
+            position: absolute;
+            top: 0;
+        }
+        .container{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            margin: auto;
+            padding: 90px;
+            border: 2px solid black;
+            position: relative;
+            height: 45vh;
+        }
+        #fixed{
+            background: blue;
+            color: white;
+            padding: 10px;
+            position: fixed;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Draggable Excercises</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div id="draggable">Drag me within box</div>
+        </div>
+        <span id="fixed" >Drag me within window</span>
+    </main>
+    <footer>
+        <h4>@2024 Draggable div Excercise</h4>
+    </footer>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const draggable = document.querySelector('#draggable');
+    const container = document.querySelector('.container');
+    const fixed =document.getElementById("fixed");
+    let offsetX, offsetY, isDragging1 = false,isDragging2=false;
+
+    draggable.addEventListener('mousedown', (e) => {
+        isDragging1 = true;
+        offsetX = e.clientX - draggable.getBoundingClientRect().left;
+        offsetY = e.clientY - draggable.getBoundingClientRect().top;
+        draggable.style.cursor = 'grabbing';
+
+    });
+    fixed.addEventListener('mousedown',(e)=>{
+        isDragging2 = true;
+        offsetX = e.clientX - fixed.getBoundingClientRect().left;
+        offsetY = e.clientY - fixed.getBoundingClientRect().top;
+        fixed.style.cursor = 'grabbing';
+    })
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging1) {
+            const containerRect = container.getBoundingClientRect();
+            const draggableRect = draggable.getBoundingClientRect();
+
+            let newLeft = e.clientX - offsetX - containerRect.left;
+            let newTop = e.clientY - offsetY - containerRect.top;
+
+            newLeft = Math.max(0, Math.min(newLeft, containerRect.width - draggableRect.width));
+            newTop = Math.max(0, Math.min(newTop, containerRect.height - draggableRect.height));
+
+            draggable.style.left = `${newLeft}px`;
+            draggable.style.top = `${newTop}px`;
+        }
+        if(isDragging2)
+        {
+            let newLeft = e.clientX - offsetX;
+            let newTop = e.clientY - offsetY 
+            fixed.style.left=`${newLeft}px`;
+            fixed.style.top=`${newTop}px`;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (isDragging1) {
+            isDragging1 = false;
+            draggable.style.cursor = 'grab';
+        }
+        if(isDragging2)
+        {
+            isDragging2=false;
+            fixed.style.cursor='grab';
+        }
+    });
+});
+
+</script>
+</html>

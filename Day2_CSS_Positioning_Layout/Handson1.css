@@ -1,0 +1,81 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    padding: 10px;
+}
+main{
+    margin-bottom: 20px;
+}
+header,footer{
+    text-align: center;
+    background: gainsboro;
+    padding: 20px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background: black;
+    padding: 10px;
+}
+nav span{
+    margin: auto;
+}
+#Intorduction{
+    font-size: large;
+    line-height: 25px;
+    color: aqua;
+    background: #000;
+    border: 1px solid yellow;
+    margin: 10px;
+    padding: 40px;
+}
+.Container{
+    display: flex;
+    padding: auto;
+}
+.Container div{
+    margin: 10px;
+    border: 2px solid orange;
+    padding: 30px;
+    background-color: honeydew;
+    color: brown;
+}
+#Boxes{
+    margin: 10px;
+}
+#Pseudo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    background: #000;
+    color: aqua;
+    padding: 10px;
+}
+li:nth-child(1):hover{
+    color: pink;
+    cursor: pointer;
+}
+li:nth-child(2):active{
+    border: 1px solid red;
+    cursor: pointer;
+}
+li:nth-child(3) input:focus
+{
+    background-color: aquamarine
+}
+ul{
+    padding: 10px;
+    list-style: none;
+}
+p{
+    margin: 10px;
+}
+p.element:hover::after{
+    content: "This is the content after P tag  ";
+}
+p.element:hover::before{
+    content: "  This is the content befor p tag  ";
+}

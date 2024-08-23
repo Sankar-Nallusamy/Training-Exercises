@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-Page</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            margin: 20px;
+        }
+        header{
+            background: gainsboro;
+            text-align: center;
+            padding: 20px;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            background: #000;
+            color: white;
+            padding: 10px;
+        }
+        nav span{
+            margin: auto 10px;
+        }
+        main{
+            width: 100%;
+            box-sizing: border-box;
+
+        }
+        section{
+            display: flex;
+            padding: 5%;
+            width: 100%;
+        }
+        .list-description{
+            width: 50%;
+            padding: 30px;
+        }
+        .table-description{
+            width: 50%;
+        }
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 10px;
+        }
+        ol,dl,ul{
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+        h1{
+            margin-bottom: 10px;
+        }
+        footer{
+            background: gainsboro;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+         <h1>Html Lists and Tables</h1>
+    </header>
+    <nav>
+     <span>Home</span><span>About</span><span>Contact</span>
+    </nav>
+    <main>
+       <section class="container">
+            <div class="list-description">
+                <h1>Ordered List</h1>
+                <ol>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ol>
+                <h1>Unordered List</h1>
+                <ul>
+                    <li>Bullet 1</li>
+                    <li>Bullet 2</li>
+                    <li>Bullet 3</li>
+                </ul>
+                <h1>Description List</h1>
+                <dl>
+                    <dt>Term 1</dt>
+                    <dd>Definition</dd>
+                    <dt>Term 2</dt>
+                    <dd>Definition</dd>
+                </dl>
+            </div>
+            <div class="table-description">
+                <h1>
+                    Simple Table:
+                </h1>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>Occupation</th>
+                    </tr>
+                    <tr>
+                        <td>Jhon</td>
+                        <td>28</td>
+                        <td>Ny</td>
+                        <td>Developer</td>
+                    </tr>
+                    <tr>
+                        <td>Jane</td>
+                        <td>34</td>
+                        <td>London</td>
+                        <td>Designer</td>
+                    </tr>
+                    <tr>
+                        <td>Tom</td>
+                        <td>22</td>
+                        <td>Torontol</td>
+                        <td>Student</td>
+                    </tr>
+                </table>
+            </div>
+       </section>
+    </main>
+    <footer>
+         <em>&#169 2024 Training Website</em>
+    </footer>
+</body>
+</html>

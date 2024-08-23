@@ -1,0 +1,54 @@
+*{
+    padding: 0px;
+    margin: 5px;
+}
+body{
+    padding: 10px;
+}
+main{
+    margin-bottom: 20px;
+}
+header,footer{
+    text-align: center;
+    background: gainsboro;
+    padding: 20px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background: black;
+    padding: 10px;
+}
+nav span{
+    margin: auto;
+}
+div{
+    background: gainsboro;
+    padding: 20px;
+    margin: 10px;
+}
+h5{
+    margin: 10px 6px;
+}
+.class{
+    background: yellow;
+}
+#Id{
+    color: red;
+}
+input[type="text"]::placeholder{
+    font-variant: small-caps;
+}
+div.Descendant p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+div.Child >p{
+    font-style: oblique;
+}
+h4 + p:hover{
+    color: violet;
+}
+h4 ~ p:hover{
+    font-size: large;
+}
