@@ -1,0 +1,67 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main-container
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border:2px solid black;
+    padding: 20px;
+}
+p
+{
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+}
+input
+{
+    width: 100%;
+    padding: 5px;
+}
+button
+{
+    position: relative;
+    margin-top: 20px;
+    border: none;
+    background: blue;
+    color: white;
+    padding: 10px;
+}
+#add-btn
+{
+    left: 35%;
+}
+#display-btn
+{
+    width: fit-content;
+    left: 33%;
+    margin: 0;
+}
+#average-btn
+{
+    width: fit-content;
+    left: 25%;
+}
+li
+{
+    margin: 10px 15px;
+}
+#average
+{
+    font-weight: bold;
+}
+#error
+{
+    display: none;
+    color: red;
+    margin: 5px 0px;
+}
