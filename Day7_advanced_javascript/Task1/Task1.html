@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="Task1.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Inventory System</h1>
+        <form name="inventory-form" onsubmit="handlesubmit(event)">
+            <p>Name:</p>
+            <input type="text" placeholder="Enter Product name" name="product-name" oninput="validateInput(event)">
+            <p>Price</p>
+            <input type="number" placeholder="Enter Product Price" name="product-price" oninput="validateInput(event)">
+            <p>Quantity</p>
+            <input type="number" placeholder="Enter Product Quantity" name="product-quantity" oninput="validateInput(event)">
+            <p id="error-msg">Enter all the details</p>
+            <button id="add-btn" type="submit">Add product</button>
+        </form>
+        <div class="inventory-list">
+            <h3>Inventory List</h3>
+            <table>
+                <thead>
+                    <th>Product name</th>
+                    <th>Price</th>
+                    <th colspan="3">Quantity</th>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="Task1.js"></script>
+</html>

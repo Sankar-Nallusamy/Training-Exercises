@@ -1,0 +1,70 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.main-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid black;
+}
+input
+{
+    width: 98%;
+    padding: 10px;
+    margin: 20px 0px;
+}
+p
+{
+    font-size: 18px;
+}
+button
+{
+    border: none;
+    background: blue;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+}
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+th
+{
+    text-align: left;
+    background: gainsboro;
+    padding: 5px;
+    border: 1px solid gray;
+    font-weight: 100;
+}
+td
+{
+    text-align: left;
+    padding: 5px;
+    border: 1px solid gray;
+    font-weight: 100;
+}
+#error-msg
+{
+    display: none;
+    color: red;
+    margin: 5px 0;
+}
+.delete-btn
+{
+    background: red;
+}

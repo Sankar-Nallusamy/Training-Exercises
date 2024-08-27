@@ -1,0 +1,59 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+.main-container
+{
+    padding: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid black;
+    height: 400px;
+}
+.search-field
+{
+    display: flex;
+}
+input
+{
+    width: 60%;
+    padding: 5px;
+}
+button
+{
+    width: 20%;
+    padding: 6px;
+    border: none;
+    background: blue;
+    color: white;
+    font-weight: bold;
+}
+.details
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.details div
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+#error-msg
+{
+    color: red;
+    display: none;
+}

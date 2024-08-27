@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades Manager</title>
+    <link rel="stylesheet" href="Task3.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Student Grades Manager</h1>
+        <form action="" name="student-form" onsubmit="handlesubmit(event)">
+            <p>Student Name :</p>
+            <input type="text" name="student-name" placeholder="Enter Student Name">
+            <div id="name-error">Invalid student name</div>
+            <p>Grade :</p>
+            <input type="number" name="student-grade" placeholder=" Enter Grade">
+            <div id="grade-error">Grade is between 0 to 100</div>
+            <button id="add-btn">Add Student</button>
+        </form>
+        <button id="display-btn">Display Grades</button>
+        <div id="empty-error">The student list is empty</div>
+        <div>
+            <h3>Grade List :</h3>
+            <ol id="student-list">
+
+            </ol>
+        </div>
+        <button id="average-btn">Calculate Average Grade</button>
+        <p id="average">Average Grade</p>
+    </div>
+</body>
+<script src="Task3.js"></script>
+</html>

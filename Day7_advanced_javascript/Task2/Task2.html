@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="Task2.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Weather Dashboard</h1>
+        <div class="search-field">
+            <input type="text" placeholder="Enter city name" id="city-name">
+            <button id="search-btn" onclick="handlesubmit()">Search</button>
+        </div>
+        <p id="error-msg">City Name is invalid</p>
+        <div class="details">
+            <div>
+                <span>City Name</span>
+                <span id="city"></span>
+            </div>
+            <div>
+                <span>Temperature</span>
+                <span id="temperature"></span>
+            </div>
+            <div>
+                <span>Humidity</span>
+                <span id="humidity"></span>
+            </div>
+            <div>
+                <span>Weather</span>
+                <img src="" alt="" id="icon">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="Task2.js"></script>
+</html>
