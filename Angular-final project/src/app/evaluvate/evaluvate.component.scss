@@ -1,0 +1,84 @@
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 22px;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.course-attempt {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.course-attempt:last-child {
+    border-bottom: none;
+}
+
+.course-attempt p {
+    margin: 0 0 10px 0;
+}
+
+.course-attempt-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.mark {
+    font-size: 16px;
+    color: #28a745;
+}
+button
+{
+    margin-left: 10px;
+    color: white;
+    background: blue;
+    padding: 0 5px;
+    border: 1px solid gray;
+}
+.details
+{
+    margin-top: 20px;
+}

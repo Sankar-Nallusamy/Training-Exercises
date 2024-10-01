@@ -1,0 +1,58 @@
+<div id="body">
+<header>
+    <h1>{{current_course}}</h1>
+    <div style="display: flex; gap: 20px;">
+        <span id="time" style="color: blue;">{{time}}</span>
+        <span id="user-name">{{current_user}}</span>
+        <div>
+            <label class="switch">
+                <input type="checkbox" id="toggle-button"(click)="toogleMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+</header>
+<div id="progress-bar"></div>
+    <div class="main">
+        <div id="question-container" class="container" >
+            <p>{{index+1 +" . "+questions[list[index]].question}}</p>
+            @if(questions[list[index]].quiztype=="MCQ")
+            {
+                <button class="options" (click)="clicked(questions[list[index]].option2)">1.{{questions[list[index]].option2}}</button>
+                <button class="options" (click)="clicked(questions[list[index]].option4)">2.{{questions[list[index]].option4}}</button>
+                <button class="options" (click)="clicked(questions[list[index]].option1)">3.{{questions[list[index]].option1}}</button>
+                <button class="options" (click)="clicked(questions[list[index]].option3)">4.{{questions[list[index]].option3}}</button>
+            }
+            @else if(questions[list[index]].quiztype==="Descriptive")
+            {
+                <textarea name="" id="h" (input)="check()"></textarea>
+            }
+            @else 
+            {
+            <button class="options" (click)="clicked('YES')">1.YES</button>
+            <button class="options" (click)="clicked('NO')">2.NO</button>
+            }
+            <div style="display: flex;gap: 10px;margin-top: 40px;">
+                @if(index>=0)
+                {
+                    <button class="action-btn" (click)="prevQuiz()">Prev</button>
+                }
+                @if(index<questions.length-1)
+                {
+                    <button class="action-btn" (click)="nextQuiz()">Next</button>
+                }
+                @else 
+                {
+                    <button class="action-btn"(click)="nextQuiz()">Submit</button>
+                }
+                <button class="action-btn" (click)="marking(index)">Mark</button>
+            </div>
+        </div>
+        <div class="preview">
+                @for (item of questions; track $index)
+                {
+                    <span class="numbers" (click)="moveTo($index)">{{$index+1}}</span>
+                }
+        </div>
+    </div>
+</div>

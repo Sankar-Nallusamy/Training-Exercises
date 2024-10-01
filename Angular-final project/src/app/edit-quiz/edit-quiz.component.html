@@ -1,0 +1,100 @@
+<div id="body">
+    <header class="light" style="display: flex; justify-content: space-between;padding: 20px 20px; align-items: center;">
+        <h1>Edit Quiz</h1>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <label class="switch">
+                <input type="checkbox" id="toggle-button" (click)="toogleMode()">
+                <span class="slider round"></span>
+              </label>
+              <a style="padding: 10px; background: blue; border-radius: 10px; color: white; border: 1px solid gray; text-decoration: none;" href="/admin/createquiz">Add Course</a>
+        </div>
+    </header>
+    <div class="quiz-container">
+        <h2>Select Your Quiz</h2>
+        <div class="quiz-selection">
+            <label for="quizDropdown">Choose a quiz:</label>
+            <select id="quizDropdown" [(ngModel)]="current_course" (change)="resetForms()">
+                <option value="" selected disabled hidden>Select a Quiz</option>
+                @for (item of courses; track $index) 
+                {
+                    <option [value]="item.title">{{item.title}}</option>
+                }
+            </select>
+            <button id="course-delete" (click)="deleteCourse()">Delete This course</button>
+        </div>
+        <h2>Questions</h2>
+        <button id="addButton" (click)="addQuestion()">Add Question</button>
+        <div>
+            <table>
+                <thead>
+                    <th>S.no</th>
+                    <th>Question</th>
+                    <th>Mark</th>
+                    <th>Action</th>
+                </thead>
+                <tbody id="questions">
+                        @for (item of questions; track $index)
+                        {
+                              <tr>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.question}}</td>
+                                <td>{{item.mark}}</td>
+                                <td><div class="action-btn"><button (click)="edit($index)" style="background-color: blue;">Edit</button><button (click)="delete($index)" style="background-color: red;">Delete</button></div></td>
+                              </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+        @if(isAdding || isEditing)
+        {
+            <label >Select the Quiz type</label>
+            <select [(ngModel)]="quiztype" style="margin-top: 10px;">
+                <option selected disabled hidden value="Select you quiz type">Select your quiz</option>
+                <option value="MCQ">MCQ</option>
+                <option value="Descriptive">Descriptive</option>
+                <option value="Yes or No">Yes or No</option>
+            </select>
+        <form id="createQuizForm" [formGroup]="createQuestionForm" (ngSubmit)="handleSubmit()" class="createQuizForm ">
+            <h3>Questions</h3>
+            <label for="questionText">Question:</label>
+            <textarea id="questionText" name="questionText" placeholder="Enter the question" rows="4" formControlName="questionText"></textarea>
+            @if(quiztype==="MCQ")
+            {
+                <label for="option1">Option 1:</label>
+                <input type="text" id="option1" name="option1" placeholder="Enter option 1" formControlName="option1">
+
+                <label for="option2">Option 2:</label>
+                <input type="text" id="option2" name="option2" placeholder="Enter option 2" formControlName="option2">
+
+                <label for="option3">Option 3:</label>
+                <input type="text" id="option3" name="option3" placeholder="Enter option 3" formControlName="option3">
+
+                <label for="option4">Option 4:</label>
+                <input type="text" id="option4" name="option4" placeholder="Enter option 4" formControlName="option4">
+            }
+            @if(quiztype!=="Descriptive")
+            {
+                <label for="correctAnswer">Correct Answer:</label>
+                <select id="correctAnswer" name="correctAnswer" formControlName="correctAnswer">
+                    <option value="" disabled selected>Select the correct answer</option>
+                    @if(quiztype==="MCQ")
+                    {
+                        <option value="option1" >Option 1</option>
+                        <option value="option2"  >Option 2</option>
+                        <option value="option3"  >Option 3</option>
+                        <option value="option4" >Option 4</option>
+                    }
+                    @else 
+                    {
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                    }
+                </select>
+            }
+            <label for="questionMark">Mark for this question:</label>
+            <input type="number" id="questionMark" name="questionMark" placeholder="Enter marks" formControlName="questionMark">
+            <button id="question-btn">Save Question</button>
+        </form>
+    }
+    </div>
+</div>

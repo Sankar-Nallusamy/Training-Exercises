@@ -1,0 +1,36 @@
+<div class="dashboard">
+    <header class="header light">
+        <h1>Admin Dashboard</h1>
+        <div class="profile">
+            <span style="padding-right: 40px;color: red; font-weight: bold;" onclick="location.href='index.html'">Logout</span>
+            <div>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-button" (change)="toggleDarkMode()">
+                    <span class="slider round"></span>
+                  </label>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="card">
+            <h2>Leaderboard Management</h2>
+            <p>Manage and view the leaderboard for different quizzes.</p>
+            <button onclick="location.href='admin/leaderboard'">Edit Leaderboard</button>
+            <button (click)="go()">Evaluate</button>
+        </div>
+        <div class="card">
+            <h2>Create and Edit Quiz</h2>
+            <p>Design new quizzes or modify existing ones.</p>
+            <button onclick="location.href='admin/createquiz'">Create New Quiz</button>
+            <button onclick="location.href='admin/editquiz'">Edit Existing Quiz</button>
+        </div>
+    </main>
+
+    <footer class="footer light">
+        <p>© 2024 Your Company Name</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Support</a>
+    </footer>
+</div>

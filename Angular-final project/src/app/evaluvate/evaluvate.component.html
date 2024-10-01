@@ -1,0 +1,43 @@
+<div>
+    <header>
+        Evaluation
+    </header>
+    <div class="container">
+        <select name="" id="" [(ngModel)]="course">
+            <option value="" selected disabled hidden>Select course</option>
+            @for (item of courses; track $index)
+            {
+                <option [value]="item.title">{{item.title}}</option>
+            }
+        </select>
+        
+        @if(!course)
+        {
+            <h1>Select a course</h1>
+        }
+        @else 
+        {
+            @for (item of courseAttempted; track $index)
+            {
+                @if(item.eval!.length>0)
+                {
+                    <div class="course-attempt">
+                        <p style="font-size: large; font-weight: bold; color: chocolate;">{{item.email}}</p>
+                        @for (x of item.eval; track $index)
+                        {
+                            <div class="details">
+                                <p class="course-attempt-title">{{$index+1}} . {{x.title}}</p>
+                                <p>{{x.option}}</p>
+                                <p class="mark">Mark: {{x.mark}}</p>
+                                <label for="">Scored mark: </label>
+                                <input type="number" min="0" [max]="x.mark" class="marks">
+                                <button (click)="save($index)">Save</button>
+                            </div>
+                        }
+                        <button (click)="saveAll(item.username)" style="margin-left: 0; margin-top: 10px;">Save All</button>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>
