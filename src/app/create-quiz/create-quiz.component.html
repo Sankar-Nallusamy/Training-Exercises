@@ -1,0 +1,94 @@
+<div id="body">
+    <header class="header">
+        <h1>Create Quiz</h1>
+        <div class="profile">
+            <span>Admin Name</span>
+            <div style="padding-left: 10px;">
+                <label class="switch">
+                    <input type="checkbox" id="toggle-button" (click)="toogleMode()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="quiz-form">
+            <h2>Quiz Details</h2>
+            <div>
+                
+                <label for="quizTitle" >Quiz Title:</label>
+                <input type="text" id="quizTitle" name="quizTitle" placeholder="Enter quiz title" required [(ngModel)]="quizTitle">
+                <p id="error">The quiz is already taken or invalid</p>
+                <label for="description">Description (Optional):</label>
+                <textarea id="description" [(ngModel)]="description"></textarea>
+                @if(isSaving)
+                {
+                    <button id="quiz-btn" (click)="saveQuiz()">Save Quiz</button>   
+                }
+                @else 
+                {
+                    <button id="quiz-btn" (click)="createQuiz()">Create Quiz</button>
+                }
+            </div>
+            @if(isCreating)
+            {
+                <label >Select the Quiz type</label>
+                <select [(ngModel)]="quiztype" style="margin-top: 10px;">
+                    <option selected disabled hidden value="Select you quiz type">Select your quiz</option>
+                    <option value="MCQ">MCQ</option>
+                    <option value="Descriptive">Descriptive</option>
+                    <option value="Yes or No">Yes or No</option>
+                </select>
+            <form id="createQuizForm" [formGroup]="createForm">
+                <h3>Questions</h3>
+                <label for="questionText">Question:</label>
+                <textarea id="questionText" name="questionText" placeholder="Enter the question" rows="4" formControlName="title"></textarea>
+                @if(quiztype==="MCQ")
+                {
+                    <label for="option1">Option 1:</label>
+                    <input type="text" id="option1" name="option1" placeholder="Enter option 1" formControlName="option1">
+
+                    <label for="option2">Option 2:</label>
+                    <input type="text" id="option2" name="option2" placeholder="Enter option 2" formControlName="option2">
+
+                    <label for="option3">Option 3:</label>
+                    <input type="text" id="option3" name="option3" placeholder="Enter option 3" formControlName="option3">
+
+                    <label for="option4">Option 4:</label>
+                    <input type="text" id="option4" name="option4" placeholder="Enter option 4" formControlName="option4">
+                }
+                @if(quiztype!=="Descriptive")
+                {
+                    <label for="correctAnswer">Correct Answer:</label>
+                    <select id="correctAnswer" name="correctAnswer" formControlName="correct_answer">
+                        <option value="" disabled selected>Select the correct answer</option>
+                        @if(quiztype==="MCQ")
+                        {
+                            <option value="option1" >Option 1</option>
+                            <option value="option2"  >Option 2</option>
+                            <option value="option3"  >Option 3</option>
+                            <option value="option4" >Option 4</option>
+                        }
+                        @else 
+                        {
+                            <option value="YES">YES</option>
+                            <option value="NO">NO</option>
+                        }
+                    </select>
+                }
+                <label for="questionMark">Mark for this question:</label>
+                <input type="number" id="questionMark" name="questionMark" placeholder="Enter marks" formControlName="mark">
+                <button id="question-btn"  (click)="saveQuestion()">Save Question</button>
+            </form>
+        }
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Your Company Name</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Support</a>
+    </footer>
+</div>

@@ -1,0 +1,45 @@
+<div id="body">
+<header class="light">
+    <h3>Quiz</h3>
+    <h1>Select course</h1>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="padding-right: 40px;color: red; font-weight: bold;" onclick="sessionStorage.clear(); location.href='index.html'">Logout</span>
+        <span id="user-name">{{current_user}}</span>
+        <div>
+            <label class="switch">
+                <input type="checkbox" id="toggle-button" (click)="toogleMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+</header>
+
+<div class="course-container" id="course-wrapper">
+    @for (course of courses; track $index) 
+    {
+        <div class="course-card">
+            <h1>{{course.title}}</h1>
+            <p>{{course.Description}}</p>
+            <button (click)="startQuiz(course.title)">Start</button>
+        </div>
+    }
+    @empty {
+        <h1>There is no quiz available</h1>
+    }
+</div>
+
+<h2>Recent Quiz</h2>
+<div class="recent-quiz" id="recent-quiz">
+    @for (course of recentQuiz; track $index) 
+    {
+        <div class="course-card">
+            <h1>{{course.title}}</h1>
+            <button (click)="startQuiz(course.title)">Quick Start</button>
+            <button style="margin-left: 10px;" class="h" (click)="go(course.title)">View Result</button>
+        </div>
+    }
+    @empty {
+        <h1>No quizzes attempted</h1>
+    }
+</div>
+</div>
